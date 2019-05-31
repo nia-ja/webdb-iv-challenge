@@ -17,7 +17,7 @@ function getDishes() {
 function addDish(dish) {
     return db('dishes')
       .insert(dish)
-      .then(ids => (ids[0]));
+      .then(ids => ({id: ids[0]}));
 }
 
 // `getDishById(id)`: should return the **dish** with the provided `id` and include a list of the related recipes.
